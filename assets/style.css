@@ -1,0 +1,12 @@
+header {
+  background-color: navy;
+  color: white;
+  height: 90px;
+  font-size: 50px;
+  text-align: center;
+  margin: 5px;
+}
+
+#searchBarTitle {
+  font-size: 40px;
+}
