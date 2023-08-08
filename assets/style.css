@@ -23,21 +23,23 @@ header {
 }
 
 #currentCityInfo {
-  position: relative;
   border: solid 5px black;
   height: fit-content;
-  left: 360px;
-  bottom: 327px;
   max-width: fit-content;
   padding: 20px;
 }
 
 #forecastCardContainer {
-  position: relative;
   border: solid 5px black;
-  left: 360px;
-  bottom: 218px;
   max-width: fit-content;
   padding: 20px;
   column-gap: 30px;
+}
+
+#forecastCardContainer h1 {
+  display: block;
+}
+
+#example {
+  display: flex;
 }
