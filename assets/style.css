@@ -7,7 +7,7 @@ header {
   margin: 5px;
 }
 
-.card-body {
+#searchBar .card-body {
   border-bottom: solid 2px grey;
 }
 
@@ -26,7 +26,7 @@ header {
   position: relative;
   border: solid 5px black;
   height: fit-content;
-  left: 328px;
+  left: 360px;
   bottom: 327px;
   max-width: fit-content;
   padding: 20px;
@@ -35,7 +35,7 @@ header {
 #forecastCardContainer {
   position: relative;
   border: solid 5px black;
-  left: 328px;
+  left: 360px;
   bottom: 218px;
   max-width: fit-content;
   padding: 20px;
