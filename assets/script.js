@@ -10,6 +10,8 @@ function fetchCity(city) {
         .then(function (citiesFound) {
             console.log(citiesFound)
             let firstCity = citiesFound[0];
+            let firstCityLon = citiesFound[0].lon
+            let firstCityLat = citiesFound[0].lat
             console.log(firstCity.lon)
             console.log(firstCity.lat)
 
@@ -18,10 +20,11 @@ function fetchCity(city) {
 
         })
 
-        .then(response => response.json())
-        .then(data => {
-
-            console.log(data);
+        .then(function (response) {
+            return response.json()
+        })
+        .then(function (forecast) {
+            console.log(forecast)
         })
 }
 
