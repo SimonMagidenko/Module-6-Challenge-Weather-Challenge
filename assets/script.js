@@ -1,15 +1,9 @@
 
 let apiKey = "0aac185f72bc2b9af05c0fe396e10820"
 
-return fetchCity()
-
-function fetchCity() {
-    let citySearched = document.querySelector("#searchBarInput").value
-    console.log(citySearched)
-    let cityName = document.querySelector("#cityName")
-    cityName.textContent = citySearched
-
-    fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${citySearched}&limit=5&appid=${apiKey}`)
+function fetchCity(city) {
+    console.log(city)
+    fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=5&appid=${apiKey}`)
         .then(function (response) {
             return response.json()
         })
@@ -32,11 +26,13 @@ function fetchCity() {
 }
 
 function searchCity() {
-    let citySearched = document.querySelector("#searchBarInput").value
-    let cityName = document.querySelector("#cityName")
-    cityName.textContent = citySearched
+    let citySearched = document.querySelector("#searchBarInput").value;
+    let cityName = document.querySelector("#cityName");
+    cityName.textContent = citySearched;
+    console.log(citySearched)
+    fetchCity(citySearched);
 }
 
-let searchButton = document.querySelector("#searchButton");
+let searchButton = document.querySelector(".searchButton");
 searchButton.addEventListener("click", searchCity);
 
