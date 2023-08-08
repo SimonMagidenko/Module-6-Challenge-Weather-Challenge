@@ -7,6 +7,15 @@ header {
   margin: 5px;
 }
 
+#searchBar {
+  display: inline;
+}
+
 #searchBarTitle {
   font-size: 40px;
+}
+
+#foreCastContainer {
+  display: flex;
+  flex-direction: row;
 }
