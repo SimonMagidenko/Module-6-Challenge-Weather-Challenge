@@ -7,15 +7,37 @@ header {
   margin: 5px;
 }
 
+.card-body {
+  border-bottom: solid 2px grey;
+}
+
 #searchBar {
-  display: inline;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
 }
 
 #searchBarTitle {
   font-size: 40px;
 }
 
-#foreCastContainer {
-  display: flex;
-  flex-direction: row;
+#currentCityInfo {
+  position: relative;
+  border: solid 5px black;
+  height: fit-content;
+  left: 328px;
+  bottom: 327px;
+  max-width: fit-content;
+  padding: 20px;
+}
+
+#forecastCardContainer {
+  position: relative;
+  border: solid 5px black;
+  left: 328px;
+  bottom: 218px;
+  max-width: fit-content;
+  padding: 20px;
+  column-gap: 30px;
 }
