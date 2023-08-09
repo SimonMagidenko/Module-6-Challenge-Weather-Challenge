@@ -24,14 +24,12 @@ header {
 }
 
 #currentCityInfo {
-  border: solid 5px black;
   height: fit-content;
   max-width: fit-content;
   padding: 20px;
 }
 
 #forecastCardContainer {
-  border: solid 5px black;
   max-width: fit-content;
   padding: 20px;
   column-gap: 30px;
