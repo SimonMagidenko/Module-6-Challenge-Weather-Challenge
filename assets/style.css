@@ -7,8 +7,9 @@ header {
   margin: 5px;
 }
 
-#searchBar .card-body {
-  border-bottom: solid 2px grey;
+.card-body {
+  color: white;
+  background-color: navy;
 }
 
 #searchBar {
@@ -40,6 +41,6 @@ header {
   display: block;
 }
 
-#example {
+#flexBoxContainer {
   display: flex;
 }
