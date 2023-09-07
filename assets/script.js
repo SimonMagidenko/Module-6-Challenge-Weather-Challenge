@@ -1,11 +1,25 @@
+let pastCitySearchedEl = document.querySelector("#pastSearchedCity")
 let apiKey = "0aac185f72bc2b9af05c0fe396e10820";
+const citiesArray = JSON.parse(localStorage.getItem("PastCitySearched")) || []
 
 if (localStorage.length === 0) {
     localStorage.setItem("PastCitySearched", "[]")
-} else {
-    const citiesArray = localStorage.getItem("PastCitySearched")
+};
 
-}
+function addLocalStorageButton() {
+    pastCitySearchedEl.innerHTML = ""
+    for (let i = 0; i < citiesArray.length; i++) {
+        let newButton = document.createElement("button");
+        newButton.textContent = citiesArray[i];
+        newButton.setAttribute("class", "pastSearchedButton")
+        pastCitySearchedEl.appendChild(newButton);
+        newButton.addEventListener("click", () => {
+            document.querySelector("#searchBarInput").value = citiesArray[i];
+            searchCity();
+        });
+    };
+
+};
 
 function fetchCity(city) {
     fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=3&appid=${apiKey}`)
@@ -93,6 +107,11 @@ function searchCity() {
     let cityNameEl = document.querySelector("#cityNameNow");
     cityNameEl.textContent = citySearched;
     fetchCity(citySearched);
+    if (!citiesArray.includes(citySearched)) {
+        citiesArray.push(citySearched)
+        localStorage.setItem("PastCitySearched", JSON.stringify(citiesArray));
+        addLocalStorageButton();
+    }
 };
 
 function fetchWeatherForDefaultCity() {
@@ -104,6 +123,7 @@ function fetchWeatherForDefaultCity() {
 
 window.onload = function () {
     fetchWeatherForDefaultCity();
+    addLocalStorageButton();
 };
 
 let searchButton = document.querySelector(".searchButton");
