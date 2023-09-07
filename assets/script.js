@@ -49,7 +49,6 @@ function fetchWeatherData(city, country) {
         })
         .then(function (forecast) {
 
-
             // Set text content for current temperature, wind, and humidity.
             // Current Temperature 
             document.querySelector("#cityTempNow").textContent = forecast.list[0].main.temp + " °F";
