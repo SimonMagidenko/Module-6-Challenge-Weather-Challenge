@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather Dashboard</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./assets/style.css" />
+  </head>
+  <body>
+    <header>Weather Dashboard</header>
+    <div id="flexBoxContainer">
+      <aside id="searchBar">
+        <div class="searchForm">
+          <h5 id="searchBarTitle">Search for a City:</h5>
+          <input
+            type="searchCity"
+            id="searchBarInput"
+            placeholder="Enter City Name"
+          />
+          <button
+            class="btn btn-primary searchButton d-block"
+            style="margin-top: 7px"
+          >
+            Search
+          </button>
+        </div>
+        <div id="pastSearchedCity"></div>
+      </aside>
+      <div id="mainContainerPage">
+        <section id="currentCityInfo">
+          <h2 id="cityNameNow"></h2>
+          <p id="currentDateNow">MM/DD/YYYY</p>
+          <img id="cityIconNow" />
+          <p>Temp: <span id="cityTempNow"></span></p>
+          <p>Wind: <span id="cityWindNow"></span></p>
+          <p>Humidity: <span id="cityHumidityNow"></span></p>
+        </section>
+        <div id="forecastCardContainerMain">
+          <h1>5-Day Forecast:</h1>
+          <section
+            id="forecastCardContainer"
+            class="d-flex flex-row justify-content-between"
+          >
+            <div class="card" style="width: 18rem">
+              <div class="card-body">
+                <h5 class="card-title" id="forecastDate">MM/DD/YYYY</h5>
+                <img
+                  class="card-subtitle mb-2 text-body-secondary forecastIcon"
+                />
+                <p class="card-text forecastTemp">Temp: Insert Text Here</p>
+                <p class="card-text forecastWind">Wind: Insert Text Here</p>
+                <p class="card-text forecastHumidity">
+                  Humidity: Insert Text Here
+                </p>
+              </div>
+            </div>
+
+            <div class="card" style="width: 18rem">
+              <div class="card-body">
+                <h5 class="card-title" id="forecastDate">MM/DD/YYYY</h5>
+                <img
+                  class="card-subtitle mb-2 text-body-secondary forecastIcon"
+                />
+                <p class="card-text forecastTemp">Temp: Insert Text Here</p>
+                <p class="card-text forecastWind">Wind: Insert Text Here</p>
+                <p class="card-text forecastHumidity">
+                  Humidity: Insert Text Here
+                </p>
+              </div>
+            </div>
+
+            <div class="card" style="width: 18rem">
+              <div class="card-body">
+                <h5 class="card-title" id="forecastDate">MM/DD/YYYY</h5>
+                <img
+                  class="card-subtitle mb-2 text-body-secondary forecastIcon"
+                />
+                <p class="card-text forecastTemp">Temp: Insert Text Here</p>
+                <p class="card-text forecastWind">Wind: Insert Text Here</p>
+                <p class="card-text forecastHumidity">
+                  Humidity: Insert Text Here
+                </p>
+              </div>
+            </div>
+
+            <div class="card" style="width: 18rem">
+              <div class="card-body">
+                <h5 class="card-title" id="forecastDate">MM/DD/YYYY</h5>
+                <img
+                  class="card-subtitle mb-2 text-body-secondary forecastIcon"
+                />
+                <p class="card-text forecastTemp">Temp: Insert Text Here</p>
+                <p class="card-text forecastWind">Wind: Insert Text Here</p>
+                <p class="card-text forecastHumidity">
+                  Humidity: Insert Text Here
+                </p>
+              </div>
+            </div>
+
+            <div class="card" style="width: 18rem">
+              <div class="card-body">
+                <h5 class="card-title" id="forecastDate">MM/DD/YYYY</h5>
+                <img
+                  class="card-subtitle mb-2 text-body-secondary forecastIcon"
+                />
+                <p class="card-text forecastTemp">Temp: Insert Text Here</p>
+                <p class="card-text forecastWind">Wind: Insert Text Here</p>
+                <p class="card-text forecastHumidity">
+                  Humidity: Insert Text Here
+                </p>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.10.6/dayjs.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./assets/script.js"></script>
+  </body>
+</html>

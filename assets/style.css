@@ -1,0 +1,47 @@
+header {
+  background-color: navy;
+  color: white;
+  height: 90px;
+  font-size: 50px;
+  text-align: center;
+  margin: 5px;
+}
+
+.card-body {
+  color: white;
+  background-color: navy;
+}
+
+#searchBar {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+#searchBarTitle {
+  font-size: 40px;
+}
+
+#currentCityInfo {
+  height: fit-content;
+  max-width: fit-content;
+  padding: 20px;
+  margin: 8px;
+  border: 2px solid black;
+  border-radius: 4px;
+}
+
+#forecastCardContainer {
+  max-width: fit-content;
+  padding: 20px;
+  column-gap: 30px;
+}
+
+#forecastCardContainer h1 {
+  display: block;
+}
+
+#flexBoxContainer {
+  display: flex;
+}
