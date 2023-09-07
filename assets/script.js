@@ -30,18 +30,30 @@ function fetchWeatherData(city, country) {
             console.log(forecast);
 
             // Set text content for current temperature, wind, and humidity.
+            // Current Temperature 
             document.querySelector("#cityTempNow").textContent = forecast.list[0].main.temp + " °F";
+            // Current Wind           
             document.querySelector("#cityWindNow").textContent = forecast.list[0].wind.speed + " mph";
+            // Current Humidity
             document.querySelector("#cityHumidityNow").textContent = forecast.list[0].main.humidity + " %";
+            // Current Icon
             forecastIconNow = document.querySelector("#cityIconNow");
             let openWeatherIconNow = forecast.list[0].weather[0].icon;
             forecastIconNow.src = `http://openweathermap.org/img/w/${openWeatherIconNow}.png`
+            // Current Date 
+            document.querySelector("#currentDateNow").textContent = dayjs(forecast.list[0].dt_txt).format('MM/DD/YYYY')
+
 
             let forecastCards = document.querySelectorAll(".card-body");
-            let number = 7;
+
+
+            let number = 0;
 
             for (let i = 0; i < forecastCards.length; i++) {
                 let forecastCardElement = forecastCards[i];
+                // Forecast Date
+                let forecastDate = document.querySelector('#forecastDate')
+                forecastDate.textContent = dayjs(forecast.list[number].dt_txt).format('MM/DD/YYYY')
 
                 // Forecast Icon
                 let forecastIcon = forecastCardElement.querySelector(".forecastIcon");
