@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather Dashboard</title>
+
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
@@ -42,7 +43,8 @@
       </aside>
       <div id="mainContainerPage">
         <section id="currentCityInfo">
-          <h2 id="cityNameNow">City Name</h2>
+          <h2 id="cityNameNow"></h2>
+          <img id="cityIconNow" />
           <p>Temp: <span id="cityTempNow"></span></p>
           <p>Wind: <span id="cityWindNow"></span></p>
           <p>Humidity: <span id="cityHumidityNow"></span></p>
@@ -56,9 +58,9 @@
             <div class="card" style="width: 18rem">
               <div class="card-body">
                 <h5 class="card-title">MM/DD/YYYY</h5>
-                <h6 class="card-subtitle mb-2 text-body-secondary forecastIcon">
-                  Insert Icon Here
-                </h6>
+                <img
+                  class="card-subtitle mb-2 text-body-secondary forecastIcon"
+                />
                 <p class="card-text forecastTemp">Temp: Insert Text Here</p>
                 <p class="card-text forecastWind">Wind: Insert Text Here</p>
                 <p class="card-text forecastHumidity">
@@ -70,9 +72,9 @@
             <div class="card" style="width: 18rem">
               <div class="card-body">
                 <h5 class="card-title">MM/DD/YYYY</h5>
-                <img class="card-subtitle mb-2 text-body-secondary forecastIcon">
-                  Insert Icon Here
-                </h6>
+                <img
+                  class="card-subtitle mb-2 text-body-secondary forecastIcon"
+                />
                 <p class="card-text forecastTemp">Temp: Insert Text Here</p>
                 <p class="card-text forecastWind">Wind: Insert Text Here</p>
                 <p class="card-text forecastHumidity">
@@ -84,9 +86,9 @@
             <div class="card" style="width: 18rem">
               <div class="card-body">
                 <h5 class="card-title">MM/DD/YYYY</h5>
-                <h6 class="card-subtitle mb-2 text-body-secondary forecastIcon">
-                  Insert Icon Here
-                </h6>
+                <img
+                  class="card-subtitle mb-2 text-body-secondary forecastIcon"
+                />
                 <p class="card-text forecastTemp">Temp: Insert Text Here</p>
                 <p class="card-text forecastWind">Wind: Insert Text Here</p>
                 <p class="card-text forecastHumidity">
@@ -98,9 +100,9 @@
             <div class="card" style="width: 18rem">
               <div class="card-body">
                 <h5 class="card-title">MM/DD/YYYY</h5>
-                <h6 class="card-subtitle mb-2 text-body-secondary forecastIcon">
-                  Insert Icon Here
-                </h6>
+                <img
+                  class="card-subtitle mb-2 text-body-secondary forecastIcon"
+                />
                 <p class="card-text forecastTemp">Temp: Insert Text Here</p>
                 <p class="card-text forecastWind">Wind: Insert Text Here</p>
                 <p class="card-text forecastHumidity">
@@ -112,9 +114,9 @@
             <div class="card" style="width: 18rem">
               <div class="card-body">
                 <h5 class="card-title">MM/DD/YYYY</h5>
-                <h6 class="card-subtitle mb-2 text-body-secondary forecastIcon">
-                  Insert Icon Here
-                </h6>
+                <img
+                  class="card-subtitle mb-2 text-body-secondary forecastIcon"
+                />
                 <p class="card-text forecastTemp">Temp: Insert Text Here</p>
                 <p class="card-text forecastWind">Wind: Insert Text Here</p>
                 <p class="card-text forecastHumidity">
@@ -126,6 +128,7 @@
         </div>
       </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.10.6/dayjs.min.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
