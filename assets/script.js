@@ -1,4 +1,25 @@
+let pastCitySearchedEl = document.querySelector("#pastSearchedCity")
 let apiKey = "0aac185f72bc2b9af05c0fe396e10820";
+const citiesArray = JSON.parse(localStorage.getItem("PastCitySearched")) || []
+
+if (localStorage.length === 0) {
+    localStorage.setItem("PastCitySearched", "[]")
+};
+
+function addLocalStorageButton() {
+    pastCitySearchedEl.innerHTML = ""
+    for (let i = 0; i < citiesArray.length; i++) {
+        let newButton = document.createElement("button");
+        newButton.textContent = citiesArray[i];
+        newButton.setAttribute("class", "pastSearchedButton")
+        pastCitySearchedEl.appendChild(newButton);
+        newButton.addEventListener("click", () => {
+            document.querySelector("#searchBarInput").value = citiesArray[i];
+            searchCity();
+        });
+    };
+
+};
 
 function fetchCity(city) {
     fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=3&appid=${apiKey}`)
@@ -27,7 +48,6 @@ function fetchWeatherData(city, country) {
             return response.json();
         })
         .then(function (forecast) {
-            console.log(forecast);
 
             // Set text content for current temperature, wind, and humidity.
             // Current Temperature 
@@ -41,19 +61,19 @@ function fetchWeatherData(city, country) {
             let openWeatherIconNow = forecast.list[0].weather[0].icon;
             forecastIconNow.src = `http://openweathermap.org/img/w/${openWeatherIconNow}.png`
             // Current Date 
-            document.querySelector("#currentDateNow").textContent = dayjs(forecast.list[0].dt_txt).format('MM/DD/YYYY')
+            document.querySelector("#currentDateNow").textContent = dayjs.unix(forecast.list[0].dt).format('MM/DD/YYYY')
 
 
             let forecastCards = document.querySelectorAll(".card-body");
 
 
-            let number = 0;
+            let number = 7;
 
             for (let i = 0; i < forecastCards.length; i++) {
                 let forecastCardElement = forecastCards[i];
                 // Forecast Date
-                let forecastDate = document.querySelector('#forecastDate')
-                forecastDate.textContent = dayjs(forecast.list[number].dt_txt).format('MM/DD/YYYY')
+                let forecastDate = forecastCardElement.querySelector('#forecastDate')
+                forecastDate.textContent = dayjs.unix(forecast.list[number].dt).format('MM/DD/YYYY')
 
                 // Forecast Icon
                 let forecastIcon = forecastCardElement.querySelector(".forecastIcon");
@@ -72,12 +92,12 @@ function fetchWeatherData(city, country) {
                 let forecastHumidity = forecastCardElement.querySelector(".forecastHumidity");
                 forecastHumidity.textContent = "Humidity: " + forecast.list[number].main.humidity + " %";
 
-                number += 8; // Adjusted to fetch data for 24-hour intervals
+                number += 8;
             }
         })
         .catch(function (error) {
             // Handle any errors that occur during the fetch.
-            console.error("Error fetching weather data:", error);
+            // console.error("Error fetching weather data:", error);
         });
 };
 
@@ -86,6 +106,11 @@ function searchCity() {
     let cityNameEl = document.querySelector("#cityNameNow");
     cityNameEl.textContent = citySearched;
     fetchCity(citySearched);
+    if (!citiesArray.includes(citySearched)) {
+        citiesArray.push(citySearched)
+        localStorage.setItem("PastCitySearched", JSON.stringify(citiesArray));
+        addLocalStorageButton();
+    }
 };
 
 function fetchWeatherForDefaultCity() {
@@ -97,6 +122,7 @@ function fetchWeatherForDefaultCity() {
 
 window.onload = function () {
     fetchWeatherForDefaultCity();
+    addLocalStorageButton();
 };
 
 let searchButton = document.querySelector(".searchButton");
